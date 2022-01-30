@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import Main, { FormStyle, Input, LabelCheck, CheckBoxInput, TextArea } from './styles/FormStyle';
 
 function Form() {
   const {
@@ -18,10 +19,10 @@ function Form() {
   } = useContext(AppContext);
 
   return (
-    <main>
-      <form onSubmit={ (e) => e.preventDefault() }>
+    <Main>
+      <FormStyle onSubmit={ (e) => e.preventDefault() }>
         <label htmlFor="card-name">
-          <input
+          <Input
             type="text"
             id="card-name"
             data-testid="name-input"
@@ -32,17 +33,18 @@ function Form() {
           />
         </label>
         <label htmlFor="card-description">
-          <textarea
+          <TextArea
             id="card-description"
             data-testid="description-input"
             name="cardDescription"
             value={ cardDescription }
+            rows="6"
             onChange={ (e) => onInputChange(e) }
             placeholder="Insira a descrição da carta"
           />
         </label>
         <label htmlFor="card-attr1">
-          <input
+          <Input
             type="number"
             id="card-attr1"
             data-testid="attr1-input"
@@ -55,7 +57,7 @@ function Form() {
           />
         </label>
         <label htmlFor="card-attr2">
-          <input
+          <Input
             type="number"
             id="card-attr2"
             data-testid="attr2-input"
@@ -68,7 +70,7 @@ function Form() {
           />
         </label>
         <label htmlFor="card-attr3">
-          <input
+          <Input
             type="number"
             id="card-attr3"
             data-testid="attr3-input"
@@ -81,7 +83,7 @@ function Form() {
           />
         </label>
         <label htmlFor="image-path">
-          <input
+          <Input
             type="text"
             id="image-path"
             data-testid="image-input"
@@ -105,8 +107,8 @@ function Form() {
           </select>
         </label>
         { hasTrunfo === false ? (
-          <label htmlFor="card-super">
-            <input
+          <LabelCheck htmlFor="card-super">
+            <CheckBoxInput
               type="checkbox"
               id="card-super"
               data-testid="trunfo-input"
@@ -114,7 +116,8 @@ function Form() {
               checked={ cardTrunfo }
               onChange={ (e) => onInputChange(e) }
             />
-          </label>
+            Esse card é super?
+          </LabelCheck>
         ) : <span>Você já tem um Super Trunfo em seu baralho</span>}
         <button
           type="submit"
@@ -124,8 +127,8 @@ function Form() {
         >
           Salvar
         </button>
-      </form>
-    </main>
+      </FormStyle>
+    </Main>
   );
 }
 
