@@ -3,18 +3,19 @@ import Form from './components/Form';
 import Card from './components/Card';
 import CardList from './components/CardList';
 import ProviderContext from './context/ProviderContext';
+import Main from './AppStyle';
 
 class App extends React.Component {
   render() {
     return (
-      <main>
+      <Main>
         <ProviderContext>
           <h1>Tryunfo</h1>
           <Form />
           <Card />
           <CardList />
         </ProviderContext>
-      </main>
+      </Main>
     );
   }
 }
