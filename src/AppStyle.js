@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export default Main = styled.main`
+const Main = styled.main`
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
 `;
+
+export default Main;
