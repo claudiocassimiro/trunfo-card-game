@@ -4,7 +4,8 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-flow: column;
+  align-items: flex-start;
+  flex-flow: row wrap;
 `;
 
 export default Main;
