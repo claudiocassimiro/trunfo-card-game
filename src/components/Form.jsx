@@ -104,7 +104,7 @@ function Form() {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        { !hasTrunfo && (
+        { hasTrunfo === false ? (
           <label htmlFor="card-super">
             <input
               type="checkbox"
@@ -115,7 +115,7 @@ function Form() {
               onChange={ (e) => onInputChange(e) }
             />
           </label>
-        ) }
+        ) : <span>Você já tem um Super Trunfo em seu baralho</span>}
         <button
           type="submit"
           disabled={ isSaveButtonDisabled }
