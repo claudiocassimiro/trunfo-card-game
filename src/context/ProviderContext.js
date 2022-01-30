@@ -42,7 +42,6 @@ const ProviderContext = ({ children }) => {
     case 'cardTrunfo':
       if (value === 'on') {
         setCardTrunfo(true);
-        setHasTrunfo(true);
       }
       break;
     default:
@@ -59,15 +58,20 @@ const ProviderContext = ({ children }) => {
   }, [cardName, cardDescription, cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3]);
 
   const onSaveButtonClick = () => {
+    if (cardTrunfo) {
+      setHasTrunfo(true);
+      setCardTrunfo(false);
+    }
+
     const card = {
-      name: cardName,
-      description: cardDescription,
-      attr1: cardAttr1,
-      attr2: cardAttr2,
-      attr3: cardAttr3,
-      image: cardImage,
-      rare: cardRare,
-      trunfo: cardTrunfo,
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
     };
 
     setDeck([...deck, card]);
@@ -92,6 +96,9 @@ const ProviderContext = ({ children }) => {
     hasTrunfo,
     isSaveButtonDisabled,
     deck,
+    setDeck,
+    setHasTrunfo,
+    setCardTrunfo,
     onInputChange,
     onSaveButtonClick,
   };
