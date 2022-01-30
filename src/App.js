@@ -10,7 +10,6 @@ class App extends React.Component {
     return (
       <Main>
         <ProviderContext>
-          <h1>Tryunfo</h1>
           <Form />
           <Card />
           <CardList />
