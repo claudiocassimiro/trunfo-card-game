@@ -16,20 +16,22 @@ function Card() {
   return (
     <main>
       <section>
-        <div>
-          <h1>{ cardName }</h1>
-          <span>{ cardRare }</span>
-        </div>
-        <div>
-          <img src={ cardImage } alt={ cardName } />
-          <span>{ cardTrunfo && 'Trunfo' }</span>
-        </div>
-        <p>{ cardDescription }</p>
-        <div>
-          <span>{ cardAttr1 }</span>
-          <span>{ cardAttr2 }</span>
-          <span>{ cardAttr3 }</span>
-        </div>
+        <article>
+          <div>
+            <h1>{ cardName }</h1>
+            <span>{ cardRare }</span>
+          </div>
+          <div>
+            <img src={ cardImage } alt={ cardName } />
+            <span>{ cardTrunfo && 'Trunfo' }</span>
+          </div>
+          <p>{ cardDescription }</p>
+          <div>
+            <span>{ cardAttr1 }</span>
+            <span>{ cardAttr2 }</span>
+            <span>{ cardAttr3 }</span>
+          </div>
+        </article>
       </section>
     </main>
   );
